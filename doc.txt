@@ -1,0 +1,15 @@
+//Skill that must to achieve
+
+-state management
+-git flow -> merge, pull request
+-ci/cd
+-node.js, express
+-authentikey -> jwt
+-react hook, ssr = server side render -> next.js
+
+data structure
+transfer data
+transform data
+operator with data
+API
+generic
