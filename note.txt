@@ -7,3 +7,5 @@
 		-multicast = process that single observable sharing data to multiple subscribers, while ensure that each subscriber receive the same data
 			-subscriber = Observer -> entity(object) that subscribe some thing (that something in this we call Observable) to observe the emit value from that thing (that thing in here is Observable) 
 		-Observable = is a stream of data , event emit that can be observed
+
+-learn more in chatGPT
