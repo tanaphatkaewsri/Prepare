@@ -2,10 +2,40 @@
 
 /use RxJs for state management
 	-Ngrx state management flow
-	-use Subject = action, BehaviorSubject = reducer to store, Service = selector
+	-use Subject = action state, BehaviorSubject = reducer state to store state, Service injection = selector state
 	/Subject = is type of Observable, that allow to multicast to multiple Observable
 		-multicast = process that single observable sharing data to multiple subscribers, while ensure that each subscriber receive the same data
 			-subscriber = Observer -> entity(object) that subscribe some thing (that something in this we call Observable) to observe the emit value from that thing (that thing in here is Observable) 
 		-Observable = is a stream of data , event emit that can be observed
+		-asObservable() -> convert into a read-only observale (prevent use next(), error(), complete() directly) just only can subscribe the thing that emit out of that
+	/BehaviorSubject = we can stored, edit value inside behaviorSubject and then emit to another subscriber
+		-but Subject() not stored value inside it's just a emit data to another subscriber
+	-Encapsulation coding
+	-map() = use to transform the value emitted from observable into new value, distinctUntilChanged() = use for handle data emit that will be duplicate if it duplicate it's will not execute, shareReplay() = share a subscribtion from observable and replay emit value to the new subscribtion, pipe async ( | async) = use to subscribe and update new value that emit by observable
+	-switchMap() = switch to another observable and canceling the previous one if it's still emitting value, tap() = use for debug, log value from  observable, catchError() = use for handle error that may occur within an observable, withLatestFrom() = use to combine the value from two or more observables for do something, (use to follow opertor)
+	-observable: NEVER -> observable that do nothing
 
--learn more in chatGPT
+	/create type interface with api data
+	-if data like 
+	`count:1292
+	next:"https://pokeapi.co/api/v2/pokemon?offset=201&limit=1"
+	previous:"https://pokeapi.co/api/v2/pokemon?offset=199&limit=1"
+	results: [
+	{
+	name:"unown"
+	url:"https://pokeapi.co/api/v2/pokemon/201/"
+	}
+	]`
+	-we will create interface type like this
+	`export interface PokemonListResponse {
+  	count: number;
+  	next: string | null;
+  	previous: string | null;
+  	results: PokemonListItem[];
+	}
+	export interface PokemonListItem {
+  	name: string;
+  	url: string;
+	}`
+
+-state management: https://www.youtube.com/watch?v=f97ICOaekNU
