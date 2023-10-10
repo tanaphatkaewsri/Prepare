@@ -40,4 +40,7 @@
 
 /state management Fireship
 	-principle of redux
--create project with use all state management -CRUD API, BootStrap
+	-next for use state management with data realtime for API
+-create project with use all state management -CRUD API, BootStrap, life-cycle
+-express typescript, socket-io, JWT
+-app service queues and caching
