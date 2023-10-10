@@ -7,13 +7,13 @@
 		-multicast = process that single observable sharing data to multiple subscribers, while ensure that each subscriber receive the same data
 			-subscriber = Observer -> entity(object) that subscribe some thing (that something in this we call Observable) to observe the emit value from that thing (that thing in here is Observable) 
 		-Observable = is a stream of data , event emit that can be observed
-		-asObservable() -> convert into a read-only observale (prevent use next(), error(), complete() directly) just only can subscribe the thing that emit out of that
+		-asObservable() -> convert into a read-only observable (prevent to use next(), error(), complete() directly) just only can subscribe the thing that emit out of that
 	/BehaviorSubject = we can stored, edit value inside behaviorSubject and then emit to another subscriber
 		-but Subject() not stored value inside it's just a emit data to another subscriber
-	-Encapsulation coding
+	-Encapsulation coding -> write code for prevent access directly
 	-map() = use to transform the value emitted from observable into new value, distinctUntilChanged() = use for handle data emit that will be duplicate if it duplicate it's will not execute, shareReplay() = share a subscribtion from observable and replay emit value to the new subscribtion, pipe async ( | async) = use to subscribe and update new value that emit by observable
-	-switchMap() = switch to another observable and canceling the previous one if it's still emitting value, tap() = use for debug, log value from  observable, catchError() = use for handle error that may occur within an observable, withLatestFrom() = use to combine the value from two or more observables for do something, (use to follow opertor)
-	-observable: NEVER -> observable that do nothing
+	-switchMap() = switch to another observable and canceling the previous one if it's still emitting value, tap() = use for debug, log value from  observable, catchError() = use for handle error that may occur within an observable, withLatestFrom() = use to combine the value from two or more observables for do something, (use with opertor that following)
+	-observable: NEVER -> return observable that do nothing
 
 	/create type interface with api data
 	-if data like 
@@ -38,4 +38,6 @@
   	url: string;
 	}`
 
--state management: https://www.youtube.com/watch?v=f97ICOaekNU
+/state management Fireship
+	-principle of redux
+-create project with use all state management -CRUD API, BootStrap
