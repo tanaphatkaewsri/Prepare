@@ -38,9 +38,33 @@
   	url: string;
 	}`
 
+/ngRx
+	-on(someAction, (state, action) => {
+	// Define how state should change
+	return newState
+	})
+	-StoreModule.forRoot({counter: counterReducer}) -> counterReducer manage counter store
+		-StoreModule = store
+		-counter = is a piece of store that managed by counterReducer
+			-counter = store prop 'count' from reduce and change by counterReducer
+		-dispatch action process by reducer -> when action dispatch -> go to store and see what reducer is manage this state action -> state change follow by setting of reducer***
+	-when inject => constructor (private store: Store<{ store_of_state, what_type_of_data_that_store_should_contain}>
+	-map() RxJs -> convert each value emit to observable
+	-pipe() RxJs -> allow you to apply RxJs operators
+	-'async' pipe -> handle the subscription and update***
+
 /state management Fireship
 	-principle of redux
 	-next for use state management with data realtime for API
+
+/Joshua NgRx
+	-NgRx state management lifecycle
+	-payload -> props = data that will send along with action
+	-createSelector??
+	-middleware -> mechanism that process the 'action' before they reach the 'reducer'??
+	-memorization -> is technic that use to optimize the performance of selectors
+
+
 -create project with use all state management -CRUD API, BootStrap, life-cycle
--express typescript, socket-io, JWT
+-express typescript, socket-io, JWT, jira
 -app service queues and caching
