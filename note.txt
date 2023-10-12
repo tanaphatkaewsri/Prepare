@@ -66,5 +66,5 @@
 
 
 -create project with use all state management -CRUD API, BootStrap, life-cycle
--express typescript, socket-io, JWT, jira
+-express typescript, socket-io, JWT, jira, CI/CD
 -app service queues and caching
