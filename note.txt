@@ -97,7 +97,7 @@
 		-createSelector() -> you fetch state from store (global) already, so we inject Store and use it (selector)
 		-select() ngrx -> use for select specific piece of state from store
 		-if we use async pipe we will not subscribe and unsubscribe
-	-adding effects
+	-adding effects -> for waiting data like API
 
 /How to use Redux DevTools			
 	-state tab -> tree, chart, raw -> tell information about state
