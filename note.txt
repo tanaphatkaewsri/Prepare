@@ -90,9 +90,14 @@
 		-create initial state -> should be js object
 		-createReducer(initial_state, on(use to set the action state change))
 			-on(action, how_state_change), {...state} = copy exist state (cause we will not direct access/edit old state, {counter: state.counter + 1} = change state by edit 'counter' property inside state by +1
-
-
-
+	-adding reducer to store
+		-create module -> a lot in chatGPT
+		-use StoreModule.forFeature('name string reducer function', reducer function)
+	-adding state to selector -> make the state to inside components
+		-createSelector() -> you fetch state from store (global) already, so we inject Store and use it (selector)
+		-select() ngrx -> use for select specific piece of state from store
+		-if we use async pipe we will not subscribe and unsubscribe
+	-adding effects
 
 /How to use Redux DevTools			
 	-state tab -> tree, chart, raw -> tell information about state
