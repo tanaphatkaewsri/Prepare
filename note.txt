@@ -68,3 +68,35 @@
 -create project with use all state management -CRUD API, BootStrap, life-cycle
 -express typescript, socket-io, JWT, jira, CI/CD
 -app service queues and caching
+
+13/10/66
+-selector ngrx -> manage, provide state from store to components
+-effect ngrx -> use for handle event that can be side effect (error) use for job like API
+	-> use effect for handle and then take that to action
+
+/NgRx Monster
+	-install dependencies
+		-templateUrl -> specific path of HTML that component.ts use to render
+		-of() rxjs -> convert value to observable
+		-@Injectable -> for make class can dependency injection to another component
+	-bind ngrx store to module, bind ngrx store dev tool
+		-StoreModule.forRoot({}, {}) -> StoreModule.forRoot = use for setting NgRx store in app, ({}, {}) = {} no initial state define and {} no additional config use config default
+		-EffectsModule.forRoot([]) = no initially NgRx effect
+		-use redux dev tool in google web browser
+	-create state type that can be happen (isLoading, success, error)
+	-create action
+		-createAction NgRx -> createAction('[Component or Module of this component] Verb of component action', (take in put) => ({return object})) -> the input represent 'payload' with action -> and then use this action to 'dispatch'
+	-create reducer -> responsibility handle how state change when dispatch action is happend
+		-create initial state -> should be js object
+		-createReducer(initial_state, on(use to set the action state change))
+			-on(action, how_state_change), {...state} = copy exist state (cause we will not direct access/edit old state, {counter: state.counter + 1} = change state by edit 'counter' property inside state by +1
+
+
+
+
+/How to use Redux DevTools			
+	-state tab -> tree, chart, raw -> tell information about state
+	-action tab -> see action dispatch
+	-diff tab -> to see how the action state change
+	-dispatch, inspection(like a history)
+	-persist, trace and test -> persist for keep event refresh browser, and test can use with test tool (ex jest)
