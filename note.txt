@@ -85,13 +85,13 @@
 		-use redux dev tool in google web browser
 	-create state type that can be happen (isLoading, success, error)
 	-create action
-		-createAction NgRx -> createAction('[Component or Module of this component] Verb of component action', (take in put) => ({return object})) -> the input represent 'payload' with action -> and then use this action to 'dispatch'
+		-createAction NgRx -> createAction('[Component or Module of this component] Verb of component action', (take in put) => ({return object})) -> the input represent 'payload' attach with action -> and then use this action to 'dispatch'
 	-create reducer -> responsibility handle how state change when dispatch action is happend
 		-create initial state -> should be js object
 		-createReducer(initial_state, on(use to set the action state change))
 			-on(action, how_state_change), {...state} = copy exist state (cause we will not direct access/edit old state, {counter: state.counter + 1} = change state by edit 'counter' property inside state by +1
 	-adding reducer to store
-		-create module -> a lot in chatGPT
+		-create module post -> a lot in chatGPT
 		-use StoreModule.forFeature('name string reducer function', reducer function)
 	-adding state to selector -> make the state to inside components
 		-createSelector() -> you fetch state from store (global) already, so we inject Store and use it (selector)
@@ -105,3 +105,20 @@
 	-diff tab -> to see how the action state change
 	-dispatch, inspection(like a history)
 	-persist, trace and test -> persist for keep event refresh browser, and test can use with test tool (ex jest)
+
+15/10/66
+	-create async effect -> store action create side effect action (success, error)
+		-payload is data that attach with action
+			-props() = is a ngrx function use to set payload shape for action (what type of paylode should be) working with createAction()
+				-ex myAction = createAction("...", props<{data: SomeType}>() -> when dispatch: this.store.dispatch(myAction({data: someData}));
+	-create reaction from action (success, error) in reducer
+		-action.posts = we change data in prob post from [] to data that come frome with payload action so we call from 'action'.(use post props from payload)
+	-create selector for action (success, error)
+	-writing effect -> create effect.ts
+		-@Inject = allow service to inject
+		-mergeMap(RxJs), ofType(NgRx) = use to handle async operation
+		-mergeMap() = use to take each value emitted by the source observable (the outer observable) and map it to inner observable
+		-ofType() = use to filter action in specific type of interest
+	-register effect to post module
+		-not forget register EffectModule in root
+	-rendering information inside our component
